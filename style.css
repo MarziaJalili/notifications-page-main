@@ -1,0 +1,195 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Young+Serif&display=swap'); */
+
+:root {
+    /* ## Colors */
+
+    /* ### Primary */
+
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    --Blue-background: hsla(219, 85%, 26%, 0.04);
+    --Blue-background-pirvate: hsla(219, 100%, 50%, 0.15);
+
+    /* ### Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Red Hat Text", sans-serif;
+    display: grid;
+    gap: 1rem;
+    color: var(--Very-dark-blue);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    & h1 {
+        font-size: 1.55rem;
+
+        .notifications-number {
+            color: white;
+            background-color: var(--Blue);
+            padding: 0.05rem 0.8rem;
+            border-radius: 8px;
+            margin-left: 5px;
+        }
+    }
+
+    .mark-all-as-read {
+        border: none;
+        background-color: transparent;
+        color: var(--Dark-grayish-blue);
+        font-size: 1.02rem;
+    }
+}
+
+
+main {
+    padding: 1.5rem 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+img {
+    width: 45px;
+}
+
+
+ul {
+    display: grid;
+    gap: 1rem;
+}
+
+li {
+    display: flex;
+    gap: 0.8rem;
+    align-items: start;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    color: var(--Dark-grayish-blue);
+}
+
+section.unread-messages li {
+    background-color: var(--Blue-background);
+}
+
+.message-details {
+    display: grid;
+    gap: 0.2rem;
+    position: relative;
+    font-size: 1rem;
+
+
+    & p {
+        line-height: 1.2;
+    }
+}
+
+.time {
+    color: var(--Grayish-blue);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background-color: var(--Red);
+    margin-top: 6px;
+    margin-left: 8px;
+    border-radius: 50%;
+}
+
+.post-name {
+    font-weight: 700;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.post-name:hover {
+    color: var(--Blue);
+}
+
+
+.user-name {
+    font-style: normal;
+    color: var(--Very-dark-blue);
+    font-weight: 700;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.user-name:hover {
+    color: var(--Blue);
+}
+
+.group-name {
+    color: var(--Blue);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.private-message {
+    display: flex;
+    align-items: start;
+    gap: 0.8rem;
+    color: var(--Dark-grayish-blue);
+
+    .private-message-content {
+        border: 1px solid var(--Light-grayish-blue-2);
+        padding: 1rem 1rem 1.7rem 1rem;
+        font-size: 1.15rem;
+        border-radius: 5px;
+        line-height: 1.2;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: var(--Blue-background-pirvate);
+            border-color: transparent;
+        }
+    }
+}
+
+/* desktop */
+@media (min-width: 40em) {
+    body {
+        background-color: var(--Blue-background);
+        place-items: center;
+    }
+
+    main {
+        background-color: var(--White);
+        margin-block: 4rem;
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        max-width: 750px;
+    }
+
+    .private-message {
+        margin-right: 2rem;
+    }
+}
