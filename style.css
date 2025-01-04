@@ -173,6 +173,10 @@ section.unread-messages li {
     }
 }
 
+.post-picture {
+    margin-left: auto;
+}
+
 /* desktop */
 @media (min-width: 40em) {
     body {
